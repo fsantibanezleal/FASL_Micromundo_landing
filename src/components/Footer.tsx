@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 import {
   contactInfo,
+  footerSocialLinks,
   footerLinks,
-  socialLinks,
 } from "../data/siteData";
 import { SocialIcon } from "./SocialIcon";
 
@@ -49,7 +49,7 @@ export function Footer() {
           />
 
           <div className="social-row">
-            {socialLinks.map((link) => (
+            {footerSocialLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}

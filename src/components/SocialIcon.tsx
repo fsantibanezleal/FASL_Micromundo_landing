@@ -15,6 +15,15 @@ function FacebookIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
+function FlickrIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <circle cx="8" cy="12" r="3.15" fill="currentColor" />
+      <circle cx="16" cy="12" r="3.15" fill="currentColor" />
+    </svg>
+  );
+}
+
 function InstagramIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
@@ -68,6 +77,7 @@ function WhatsappIcon(props: SVGProps<SVGSVGElement>) {
 
 const iconMap: Record<IconKind, IconComponent> = {
   facebook: FacebookIcon,
+  flickr: FlickrIcon,
   instagram: InstagramIcon,
   linkedin: LinkedinIcon,
   twitter: TwitterIcon,

@@ -1,5 +1,6 @@
 export type IconKind =
   | "facebook"
+  | "flickr"
   | "instagram"
   | "linkedin"
   | "twitter"
@@ -131,14 +132,42 @@ export const socialLinks: SocialLink[] = [
     icon: "twitter",
   },
   {
+    label: "Instagram",
+    href: "https://www.instagram.com/micromundoteam/",
+    icon: "instagram",
+  },
+  {
     label: "LinkedIn",
     href: "https://cl.linkedin.com/company/micromundoteam/",
     icon: "linkedin",
+  },
+];
+
+export const footerSocialLinks: SocialLink[] = [
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/micromundoteam/",
+    icon: "facebook",
+  },
+  {
+    label: "Twitter",
+    href: "https://twitter.com/micromundoteam/",
+    icon: "twitter",
   },
   {
     label: "Instagram",
     href: "https://www.instagram.com/micromundoteam/",
     icon: "instagram",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://cl.linkedin.com/company/micromundoteam/",
+    icon: "linkedin",
+  },
+  {
+    label: "Flickr",
+    href: "https://www.flickr.com/photos/micromundoteam/",
+    icon: "flickr",
   },
 ];
 
