@@ -1750,10 +1750,33 @@ body {
   line-height: 1;
 }
 
-.counter-card span {
+.counter-card__value {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.08em;
+  color: #1f5e9d;
+}
+
+.counter-card__number {
+  color: #2d6ea6;
+}
+
+.counter-card__plus {
+  color: #f48a1f;
+  font-size: 0.52em;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 1;
+  transform: translateY(-0.3em);
+}
+
+.counter-card__label {
   color: #5f7286;
-  font-weight: 700;
-  line-height: 1.5;
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1.45;
+  text-transform: uppercase;
 }
 
 .home-gallery {
@@ -2990,7 +3013,7 @@ body {
 
 .circuit-services__subtitle {
   margin: 0 0 0.45rem;
-  color: var(--accent);
+  color: #f48a1f;
   font-size: 0.82rem;
   font-weight: 900;
   letter-spacing: 0.14em;
@@ -3364,8 +3387,8 @@ body {
     text-align: left;
   }
 
-  .circuit-services__list-item span {
-    color: var(--accent);
+.circuit-services__list-item span {
+    color: #f48a1f;
     font-size: 0.78rem;
     font-weight: 900;
     letter-spacing: 0.14em;

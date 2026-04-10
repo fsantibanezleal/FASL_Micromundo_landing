@@ -365,8 +365,15 @@ export function HomePage() {
                   data-reveal
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
-                  <strong>{item.value}</strong>
-                  <span>{item.label}</span>
+                  <strong className="counter-card__value">
+                    <span className="counter-card__number">
+                      {item.value.replace("+", "")}
+                    </span>
+                    {item.value.includes("+") ? (
+                      <sup className="counter-card__plus">+</sup>
+                    ) : null}
+                  </strong>
+                  <span className="counter-card__label">{item.label}</span>
                 </article>
               ))}
             </div>
