@@ -425,7 +425,7 @@ export function HomePage() {
 
         <div className="container">
           <SectionIntro
-            eyebrow="Nuestros Colaboradores"
+            eyebrow="Nuestros Colaboradores:"
             title="Instituciones, laboratorios y redes que sostienen la experiencia."
             description="La franja de colaboradores vuelve a funcionar como en el sitio original: logos monocromos sobre fondo claro, con acentos y movimiento continuo."
             align="center"
