@@ -3378,45 +3378,33 @@ body {
 .site-footer--seamless {
   position: relative;
   margin-top: -9.75rem;
-  padding-top: 0;
   overflow: hidden;
   isolation: isolate;
-  background: transparent;
-}
-
-.site-footer--seamless::before {
-  content: "";
-  position: absolute;
-  inset: 6.75rem 0 0;
-  background:
-    linear-gradient(180deg, rgba(4, 12, 94, 0.66) 0%, rgba(4, 12, 94, 0.92) 24%, rgba(4, 12, 94, 0.98) 100%),
-    url("/media/decor/maps8.png") center 34% / cover no-repeat;
   z-index: 0;
 }
 
+.site-footer--seamless::before,
 .site-footer--seamless::after {
-  content: "";
-  position: absolute;
-  inset: 6.75rem 0 auto;
-  height: 13rem;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 35%, rgba(255, 255, 255, 0) 100%);
-  pointer-events: none;
-  z-index: 0;
+  content: none;
 }
 
 .site-footer--seamless .site-footer__mountain {
+  display: block;
+  position: absolute;
   top: 0;
   left: -25%;
   width: 150%;
-  height: calc(100% + 2rem);
-  z-index: 0;
+  height: 100%;
+  background: #ffffff;
+  z-index: -1;
 }
 
 .site-footer--seamless .site-footer__mountain svg {
-  display: block;
   width: 100%;
+  left: 0;
+  top: 0;
   height: 100%;
+  position: absolute;
 }
 
 .site-footer--seamless .site-footer__grid,
@@ -3454,19 +3442,6 @@ body {
     margin-top: -8.25rem;
   }
 
-  .site-footer--seamless::before,
-  .site-footer--seamless::after {
-    inset-inline: 0;
-  }
-
-  .site-footer--seamless::before {
-    inset-block-start: 5.75rem;
-  }
-
-  .site-footer--seamless::after {
-    inset-block-start: 5.75rem;
-  }
-
   .site-footer--seamless .site-footer__mountain {
     width: 165%;
     left: -32.5%;
@@ -3484,18 +3459,6 @@ body {
 
   .site-footer--seamless {
     margin-top: -6.5rem;
-  }
-
-  .site-footer--seamless::before {
-    inset: 4.75rem 0 0;
-    background:
-      linear-gradient(180deg, rgba(4, 12, 94, 0.64) 0%, rgba(4, 12, 94, 0.9) 22%, rgba(4, 12, 94, 0.98) 100%),
-      url("/media/decor/maps8.png") center top / cover no-repeat;
-  }
-
-  .site-footer--seamless::after {
-    inset: 4.75rem 0 auto;
-    height: 9rem;
   }
 
   .site-footer--seamless .site-footer__mountain {
