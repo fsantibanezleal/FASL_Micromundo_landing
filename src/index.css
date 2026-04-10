@@ -3369,3 +3369,149 @@ body {
     text-align: left;
   }
 }
+
+/* Seamless footer integration */
+.home-collaborators {
+  padding-bottom: 13.5rem;
+}
+
+.site-footer--seamless {
+  position: relative;
+  margin-top: -9.75rem;
+  padding-top: 0;
+  overflow: hidden;
+  isolation: isolate;
+  background: transparent;
+}
+
+.site-footer--seamless::before {
+  content: "";
+  position: absolute;
+  inset: 6.75rem 0 0;
+  background:
+    linear-gradient(180deg, rgba(4, 12, 94, 0.66) 0%, rgba(4, 12, 94, 0.92) 24%, rgba(4, 12, 94, 0.98) 100%),
+    url("/media/decor/maps8.png") center 34% / cover no-repeat;
+  z-index: 0;
+}
+
+.site-footer--seamless::after {
+  content: "";
+  position: absolute;
+  inset: 6.75rem 0 auto;
+  height: 13rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 35%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.site-footer--seamless .site-footer__mountain {
+  top: 0;
+  left: -25%;
+  width: 150%;
+  height: calc(100% + 2rem);
+  z-index: 0;
+}
+
+.site-footer--seamless .site-footer__mountain svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.site-footer--seamless .site-footer__grid,
+.site-footer--seamless .site-footer__bottom {
+  position: relative;
+  z-index: 1;
+}
+
+.site-footer--seamless .site-footer__grid {
+  padding-top: 12rem;
+  padding-bottom: 2.4rem;
+}
+
+.site-footer--seamless .site-footer__brand,
+.site-footer--seamless .site-footer__column {
+  align-self: start;
+}
+
+.site-footer--seamless .site-footer__bottom {
+  padding-top: 1.25rem;
+  padding-bottom: 2.2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.site-footer--seamless .site-footer__bottom p {
+  opacity: 0.92;
+}
+
+@media (max-width: 1180px) {
+  .home-collaborators {
+    padding-bottom: 11.5rem;
+  }
+
+  .site-footer--seamless {
+    margin-top: -8.25rem;
+  }
+
+  .site-footer--seamless::before,
+  .site-footer--seamless::after {
+    inset-inline: 0;
+  }
+
+  .site-footer--seamless::before {
+    inset-block-start: 5.75rem;
+  }
+
+  .site-footer--seamless::after {
+    inset-block-start: 5.75rem;
+  }
+
+  .site-footer--seamless .site-footer__mountain {
+    width: 165%;
+    left: -32.5%;
+  }
+
+  .site-footer--seamless .site-footer__grid {
+    padding-top: 10.25rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .home-collaborators {
+    padding-bottom: 9.5rem;
+  }
+
+  .site-footer--seamless {
+    margin-top: -6.5rem;
+  }
+
+  .site-footer--seamless::before {
+    inset: 4.75rem 0 0;
+    background:
+      linear-gradient(180deg, rgba(4, 12, 94, 0.64) 0%, rgba(4, 12, 94, 0.9) 22%, rgba(4, 12, 94, 0.98) 100%),
+      url("/media/decor/maps8.png") center top / cover no-repeat;
+  }
+
+  .site-footer--seamless::after {
+    inset: 4.75rem 0 auto;
+    height: 9rem;
+  }
+
+  .site-footer--seamless .site-footer__mountain {
+    width: 210%;
+    left: -55%;
+    height: calc(100% + 1rem);
+  }
+
+  .site-footer--seamless .site-footer__grid {
+    padding-top: 8.35rem;
+    padding-bottom: 1.85rem;
+    row-gap: 2rem;
+  }
+
+  .site-footer--seamless .site-footer__bottom {
+    padding-top: 0.95rem;
+    padding-bottom: 1.8rem;
+  }
+}

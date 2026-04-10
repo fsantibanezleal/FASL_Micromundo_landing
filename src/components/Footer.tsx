@@ -9,7 +9,7 @@ import { SocialIcon } from "./SocialIcon";
 
 export function Footer() {
   return (
-    <footer className="site-footer">
+    <footer className="site-footer site-footer--seamless">
       <div className="site-footer__mountain" aria-hidden="true">
         <svg viewBox="0 0 1920 720" preserveAspectRatio="none">
           <defs>
@@ -77,8 +77,11 @@ export function Footer() {
           <p className="site-footer__heading">Contacto</p>
           <ul className="footer-contact footer-contact--plain">
             <li>
-              <span className="site-footer__contact-label">Dirección:</span>
-              <span>Independencia 1027, Independencia, Facultad de Medicina, Universidad de Chile</span>
+              <span className="site-footer__contact-label">Direccion:</span>
+              <span>
+                Independencia 1027, Independencia, Facultad de Medicina,
+                Universidad de Chile
+              </span>
             </li>
             <li>
               <span className="site-footer__contact-label">Website:</span>
@@ -91,27 +94,33 @@ export function Footer() {
               <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
             </li>
             <li>
-              <span className="site-footer__contact-label">Teléfono:</span>
-              <a href={contactInfo.phoneHref}>+56 9 3406 6432</a>
+              <span className="site-footer__contact-label">Telefono:</span>
+              <a href={contactInfo.phoneHref}>{contactInfo.phoneDisplay}</a>
             </li>
           </ul>
         </div>
 
-        <div className="site-footer__column site-footer__column--newsletter" data-reveal>
+        <div
+          className="site-footer__column site-footer__column--newsletter"
+          data-reveal
+        >
           <p className="site-footer__heading">Newsletter</p>
 
           <form
             className="site-footer__newsletter"
             onSubmit={(event) => event.preventDefault()}
           >
-            <label className="site-footer__newsletter-label" htmlFor="footer-email">
-              Correo electrónico:
+            <label
+              className="site-footer__newsletter-label"
+              htmlFor="footer-email"
+            >
+              Correo electronico:
             </label>
             <input
               id="footer-email"
               type="email"
-              placeholder="Agregega tu email aquí"
-              aria-label="Correo electrónico"
+              placeholder="Agrega tu email aqui"
+              aria-label="Correo electronico"
             />
             <button type="submit" className="button site-footer__submit">
               Enviar
@@ -122,7 +131,9 @@ export function Footer() {
 
       <div className="container site-footer__bottom">
         <div className="site-footer__bottom-links">
-          <Link to="/politicas-de-privacidad">Términos de uso | Políticas de privacidad</Link>
+          <Link to="/politicas-de-privacidad">
+            Terminos de uso | Politicas de privacidad
+          </Link>
         </div>
         <p>Copyright © 2023 MicroMundo. Todos los derechos reservados.</p>
       </div>
