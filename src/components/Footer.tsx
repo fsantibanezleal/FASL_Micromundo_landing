@@ -1,11 +1,9 @@
-import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import {
   contactInfo,
   footerLinks,
   socialLinks,
-  utilityCta,
 } from "../data/siteData";
 import { SocialIcon } from "./SocialIcon";
 
@@ -24,9 +22,9 @@ export function Footer() {
               gradientTransform="matrix(0.9848 -0.1736 0.1736 0.9848 11.3419 105.8396)"
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset="0" stopColor="#131C77" />
-              <stop offset="0.2856" stopColor="#0D166D" />
-              <stop offset="1" stopColor="#000857" />
+              <stop offset="0" stopColor="#040c5e" />
+              <stop offset="0.2856" stopColor="#040c5e" />
+              <stop offset="1" stopColor="#040c5e" />
             </linearGradient>
           </defs>
 
@@ -45,25 +43,10 @@ export function Footer() {
       <div className="container site-footer__grid">
         <div className="site-footer__brand" data-reveal>
           <img
-            src="/media/branding/logo-crop-2.png"
+            src="/media/branding/logo-letras.png"
             alt="MicroMundo"
             className="site-footer__logo site-footer__logo--wide"
           />
-          <p className="site-footer__copy">
-            Experiencias de ciencia, salud, microscopía y cultura visual para
-            colegios, laboratorios e instituciones que quieren aprender desde el
-            fenómeno y la observación.
-          </p>
-
-          <a
-            href={utilityCta.href}
-            target="_blank"
-            rel="noreferrer"
-            className="site-footer__inline-link"
-          >
-            {utilityCta.label}
-            <ArrowRight size={15} />
-          </a>
 
           <div className="social-row">
             {socialLinks.map((link) => (
@@ -82,7 +65,7 @@ export function Footer() {
         </div>
 
         <div className="site-footer__column" data-reveal>
-          <p className="site-footer__heading">Líneas de trabajo</p>
+          <p className="site-footer__heading">Servicios</p>
           <ul className="footer-list">
             {footerLinks.map((item) => (
               <li key={item}>{item}</li>
@@ -92,56 +75,56 @@ export function Footer() {
 
         <div className="site-footer__column" data-reveal>
           <p className="site-footer__heading">Contacto</p>
-          <ul className="footer-contact">
+          <ul className="footer-contact footer-contact--plain">
             <li>
-              <MapPin size={16} />
-              <a href={contactInfo.addressHref} target="_blank" rel="noreferrer">
-                {contactInfo.address}
+              <span className="site-footer__contact-label">Dirección:</span>
+              <span>Independencia 1027, Independencia, Facultad de Medicina, Universidad de Chile</span>
+            </li>
+            <li>
+              <span className="site-footer__contact-label">Website:</span>
+              <a href={contactInfo.site} target="_blank" rel="noreferrer">
+                {contactInfo.site}
               </a>
             </li>
             <li>
-              <Mail size={16} />
+              <span className="site-footer__contact-label">Email:</span>
               <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
             </li>
             <li>
-              <Phone size={16} />
-              <a href={contactInfo.phoneHref}>{contactInfo.phoneDisplay}</a>
+              <span className="site-footer__contact-label">Teléfono:</span>
+              <a href={contactInfo.phoneHref}>+56 9 3406 6432</a>
             </li>
           </ul>
         </div>
 
         <div className="site-footer__column site-footer__column--newsletter" data-reveal>
           <p className="site-footer__heading">Newsletter</p>
-          <p className="site-footer__copy">
-            Suscríbete para recibir novedades, talleres, materiales y nuevas
-            colaboraciones de MicroMundo.
-          </p>
 
           <form
             className="site-footer__newsletter"
             onSubmit={(event) => event.preventDefault()}
           >
+            <label className="site-footer__newsletter-label" htmlFor="footer-email">
+              Correo electrónico:
+            </label>
             <input
+              id="footer-email"
               type="email"
-              placeholder="Tu correo electrónico"
+              placeholder="Agregega tu email aquí"
               aria-label="Correo electrónico"
             />
             <button type="submit" className="button site-footer__submit">
-              Suscribirme
-              <ArrowRight size={16} />
+              Enviar
             </button>
           </form>
         </div>
       </div>
 
       <div className="container site-footer__bottom">
-        <p>© MicroMundo. Todos los derechos reservados.</p>
         <div className="site-footer__bottom-links">
-          <Link to="/politicas-de-privacidad">Términos y privacidad</Link>
-          <a href={contactInfo.site} target="_blank" rel="noreferrer">
-            Sitio original
-          </a>
+          <Link to="/politicas-de-privacidad">Términos de uso | Políticas de privacidad</Link>
         </div>
+        <p>Copyright © 2023 MicroMundo. Todos los derechos reservados.</p>
       </div>
     </footer>
   );

@@ -36,10 +36,10 @@ function InternalNavLink({ href, label, onClick }: InternalNavProps) {
 
 export function Header({ onSearchOpen }: HeaderProps) {
   const location = useLocation();
-  const [menuPathname, setMenuPathname] = useState<string | null>(null);
+  const [menuPath, setMenuPath] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const isHome = location.pathname === "/";
-  const menuOpen = menuPathname === location.pathname;
+  const menuOpen = menuPath === location.pathname;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -97,7 +97,7 @@ export function Header({ onSearchOpen }: HeaderProps) {
               rel="noreferrer"
               className="utility-bar__cta"
             >
-              INTRODUCE CODIGO AULA
+              INTRODUCE CÓDIGO AULA
             </a>
           </div>
         </div>
@@ -105,6 +105,19 @@ export function Header({ onSearchOpen }: HeaderProps) {
 
       <div className="site-header__main">
         <div className="container site-header__main-inner">
+          <button
+            type="button"
+            onClick={() =>
+              setMenuPath((current) =>
+                current === location.pathname ? null : location.pathname,
+              )
+            }
+            className="icon-button icon-button--mobile site-header__menu-button"
+            aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+          >
+            {menuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+
           <NavLink to="/" className="brand" aria-label={`${siteName} inicio`}>
             <img
               src="/media/branding/logo-crop-2.png"
@@ -141,18 +154,6 @@ export function Header({ onSearchOpen }: HeaderProps) {
               <Search size={18} />
               <span>Buscar</span>
             </button>
-            <button
-              type="button"
-              onClick={() =>
-                setMenuPathname((current) =>
-                  current === location.pathname ? null : location.pathname,
-                )
-              }
-              className="icon-button icon-button--mobile"
-              aria-label={menuOpen ? "Cerrar menu" : "Abrir menu"}
-            >
-              {menuOpen ? <X size={20} /> : <Menu size={20} />}
-            </button>
           </div>
         </div>
 
@@ -171,7 +172,7 @@ export function Header({ onSearchOpen }: HeaderProps) {
                   target="_blank"
                   rel="noreferrer"
                   className="mobile-nav__link"
-                  onClick={() => setMenuPathname(null)}
+                  onClick={() => setMenuPath(null)}
                 >
                   {item.label}
                 </a>
@@ -180,7 +181,7 @@ export function Header({ onSearchOpen }: HeaderProps) {
                   key={item.label}
                   to={item.href}
                   className="mobile-nav__link"
-                  onClick={() => setMenuPathname(null)}
+                  onClick={() => setMenuPath(null)}
                 >
                   {item.label}
                 </NavLink>
