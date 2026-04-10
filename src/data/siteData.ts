@@ -150,9 +150,9 @@ export const utilityCta = {
 export const homeServiceSteps: HomeServiceStep[] = [
   {
     step: "01",
-    title: "Phenomenon Learning",
+    title: "Microscopía Virtual",
     description:
-      "Experiencias que cruzan observación, preguntas reales y contenidos curriculares en una misma secuencia.",
+      "Biblioteca digital navegable para observar preparados, ampliar detalles y trabajar evidencia visual en clase.",
   },
   {
     step: "02",
@@ -162,9 +162,9 @@ export const homeServiceSteps: HomeServiceStep[] = [
   },
   {
     step: "03",
-    title: "E-Learning",
+    title: "Aula Virtual",
     description:
-      "Biblioteca digital, recursos descargables y acompañamiento remoto sin depender de WordPress o plugins.",
+      "Recursos complementarios, seguimiento remoto y materiales listos para ampliar la experiencia fuera del taller.",
   },
   {
     step: "04",

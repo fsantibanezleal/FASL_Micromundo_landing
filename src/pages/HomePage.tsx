@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { SectionIntro } from "../components/SectionIntro";
 import {
   collaboratorLogos,
-  homeGallery,
   homeServiceSteps,
   homeStats,
   methodologyCards,
@@ -17,6 +16,25 @@ const methodologyImages = [
   "/media/decor/method-4.png",
   "/media/decor/hex-2.png",
   "/media/decor/spark.png",
+];
+
+const methodologyLayerImages = [
+  {
+    src: "/media/decor/image-layer-12-1.png",
+    className: "home-image-layer__panel home-image-layer__panel--one fade_in",
+  },
+  {
+    src: "/media/decor/image-layer-12-2.png",
+    className: "home-image-layer__panel home-image-layer__panel--two slide_left",
+  },
+  {
+    src: "/media/decor/image-layer-12-3.png",
+    className: "home-image-layer__panel home-image-layer__panel--three slide_right",
+  },
+  {
+    src: "/media/decor/image-layer-12-4.png",
+    className: "home-image-layer__panel home-image-layer__panel--four fade_in",
+  },
 ];
 
 const marqueeLogos = [...collaboratorLogos, ...collaboratorLogos];
@@ -114,6 +132,7 @@ export function HomePage() {
                 data-reveal
                 style={{ transitionDelay: `${index * 90}ms` }}
               >
+                <div className="service-step__shape" aria-hidden="true" />
                 <span className="service-step__number">{step.step}</span>
                 <h3>{step.title}</h3>
                 <p>{step.description}</p>
@@ -125,7 +144,20 @@ export function HomePage() {
         <div className="section-mountain section-mountain--landing" aria-hidden="true" />
       </section>
 
-      <section className="section-shell section-shell--plain" id="metodologia">
+      <section className="section-shell section-shell--plain section-shell--phenomenon" id="metodologia">
+        <div className="section-shell__atmosphere section-shell__atmosphere--phenomenon" aria-hidden="true">
+          <img
+            src="/media/decor/vector-smart-object-copy-34.png"
+            alt=""
+            className="section-shell__decor section-shell__decor--vector"
+          />
+          <img
+            src="/media/decor/hexagoon-triple.png"
+            alt=""
+            className="section-shell__decor section-shell__decor--hex"
+          />
+        </div>
+
         <div className="container home-split">
           <div className="home-split__copy" data-reveal>
             <SectionIntro
@@ -156,22 +188,49 @@ export function HomePage() {
             </div>
           </div>
 
-          <div className="home-gallery">
-            {homeGallery.map((image, index) => (
-              <figure
-                className={`home-gallery__item home-gallery__item--${index + 1}`}
-                key={image.src}
-                data-reveal
-                style={{ transitionDelay: `${index * 70}ms` }}
-              >
-                <img src={image.src} alt={image.alt} />
-              </figure>
-            ))}
+          <div className="home-split__visual home-split__visual--layered" data-reveal>
+            <img
+              src="/media/decor/section-about-us-02.png"
+              alt=""
+              aria-hidden="true"
+              className="home-split__ghost home-split__ghost--one"
+            />
+            <img
+              src="/media/decor/vector-smart-object-copy-34.png"
+              alt=""
+              aria-hidden="true"
+              className="home-split__ghost home-split__ghost--two"
+            />
+
+            <div className="home-image-layer" aria-hidden="true">
+              {methodologyLayerImages.map((image, index) => (
+                <figure
+                  key={image.src}
+                  className={`img-layer-image-wrapper ${image.className}`}
+                  style={{ transitionDelay: `${index * 140}ms` }}
+                >
+                  <img src={image.src} alt="" className="img-layer-image" />
+                </figure>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       <section className="community-band">
+        <div className="community-band__particles" aria-hidden="true">
+          <img
+            src="/media/decor/hexagoon-triple.png"
+            alt=""
+            className="community-band__decor community-band__decor--hex"
+          />
+          <img
+            src="/media/decor/vector-smart-object-copy-34.png"
+            alt=""
+            className="community-band__decor community-band__decor--ring"
+          />
+        </div>
+
         <div className="container community-band__inner" data-reveal>
           <div className="community-band__copy">
             <p className="eyebrow">Unete a la comunidad</p>
@@ -197,7 +256,20 @@ export function HomePage() {
         <div className="section-mountain section-mountain--home3" aria-hidden="true" />
       </section>
 
-      <section className="section-shell section-shell--tint" id="programas">
+      <section className="section-shell section-shell--tint section-shell--circuit" id="programas">
+        <div className="section-shell__atmosphere section-shell__atmosphere--circuit" aria-hidden="true">
+          <img
+            src="/media/decor/section-about-us-02.png"
+            alt=""
+            className="section-shell__decor section-shell__decor--soft"
+          />
+          <img
+            src="/media/decor/hexagoon-triple.png"
+            alt=""
+            className="section-shell__decor section-shell__decor--hex-small"
+          />
+        </div>
+
         <div className="container">
           <SectionIntro
             eyebrow="Multidisciplinaria y Experimental"
