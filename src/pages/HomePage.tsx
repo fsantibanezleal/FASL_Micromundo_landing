@@ -379,14 +379,14 @@ export function HomePage() {
           <div className="home-course-showcase__copy" data-reveal>
             <div className="home-section-title">
               <span className="home-section-title__divider" aria-hidden="true" />
-              <h2>Divi\u00e9rtete investigando en alguno de nuestros cursos</h2>
+              <h2>Diviértete investigando en alguno de nuestros cursos</h2>
             </div>
 
             <p className="section-copy home-course-showcase__description">
               Cursos para fines de semana, visitas a colegios, cursos
               semestrales para colegios, escuelas de invierno y verano.
-              Co-dise\u00f1amos en conjunto con el colegio la mejor experiencia
-              cient\u00edfica.{" "}
+              Co-diseñamos en conjunto con el colegio la mejor experiencia
+              científica.{" "}
               <Link to="/courses">ver mas detalles</Link>
             </p>
           </div>

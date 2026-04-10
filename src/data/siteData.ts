@@ -438,21 +438,21 @@ export const courses: Course[] = [
     slug: "laboratorio-movil",
     title: "Laboratorio móvil",
     description:
-      "Experiencia itinerante con estaciones de observaci\u00f3n, muestras y actividades guiadas para cursos de educaci\u00f3n media.",
+      "Experiencia itinerante con estaciones de observación, muestras y actividades guiadas para cursos de educación media.",
     image: "/media/courses/laboratorio-movil.jpg",
-    tags: ["Educaci\u00f3n Media"],
+    tags: ["Educación Media"],
     format: "Curso semestral",
-    audience: "Educaci\u00f3n Media",
+    audience: "Educación Media",
   },
   {
     slug: "laboratorio-morfologia-sexualidad-genero",
     title: "Laboratorio de Morfología, Sexualidad, y Género",
     description:
-      "Visita escolar que cruza morfolog\u00eda, sexualidad y conversaci\u00f3n guiada mediante materiales visuales y actividades mediadas.",
+      "Visita escolar que cruza morfología, sexualidad y conversación guiada mediante materiales visuales y actividades mediadas.",
     image: "/media/courses/laboratorio-morfologia.jpg",
     tags: ["Visita Colegio"],
     format: "Visita a colegio",
-    audience: "P\u00fablico General",
+    audience: "Público General",
   },
 ];
 
