@@ -20,17 +20,14 @@ export function CoursesPage() {
 
   return (
     <>
-      <PageHero
-        title="Cursos"
-        description="La misma lógica del catálogo original, pero con filtros claros, tarjetas limpias y sin dependencia de un portfolio de WordPress."
-      />
+      <PageHero title="Cursos" />
 
       <section className="section-shell" id="catalogo">
         <div className="container">
           <SectionIntro
             eyebrow="Catálogo"
-            title="Cursos y talleres para básica, media, pre-básica, visitas y experiencias abiertas."
-            description="La selección resume el catálogo visible del sitio actual y mantiene sus categorías principales."
+            title="Cursos para básica, media, pre-básica, visitas y experiencias abiertas."
+            description="Cursos para fines de semana, visitas a colegios, cursos semestrales para colegios, escuelas de invierno y verano."
           />
 
           <div className="filter-row" data-reveal>

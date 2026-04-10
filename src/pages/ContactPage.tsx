@@ -46,18 +46,15 @@ export function ContactPage() {
 
   return (
     <>
-      <PageHero
-        title="Contáctenos"
-        description="Dirección, correo, teléfono y un formulario ligero que abre el canal de contacto sin requerir backend."
-      />
+      <PageHero title="Contáctenos" />
 
       <section className="section-shell" id="formulario">
         <div className="container contact-grid">
           <div className="contact-stack">
             <SectionIntro
               eyebrow="Contacto directo"
-              title="La versión nueva no necesita plugins para algo tan básico."
-              description="Los datos siguen siendo los mismos del sitio actual, pero la experiencia es más clara y corta."
+              title="Mantengamos el contacto"
+              description="Nos encantan las colaboraciones en nuevos proyectos con profesores y cientificos. Tambien desarrollamos nuevos productos o cursos adaptandonos a los requerimientos de cada colegio."
             />
 
             <article className="contact-card" data-reveal>

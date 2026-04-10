@@ -12,10 +12,7 @@ import {
 export function AboutPage() {
   return (
     <>
-      <PageHero
-        title="#micromundoteam"
-        description="Un equipo interdisciplinario que mezcla ciencias, ingenieria, visualidad y mediacion para llevar experiencias memorables desde la universidad a la escuela."
-      />
+      <PageHero title="#micromundoteam" />
 
       <section className="section-shell">
         <div className="container about-intro">
@@ -42,7 +39,7 @@ export function AboutPage() {
           <SectionIntro
             eyebrow="Equipo Multidisciplinario"
             title="Personas reales, roles concretos y trabajo interdisciplinario."
-            description="La pagina original mostraba al equipo como una galeria. Aqui se mantiene esa logica, con mejor jerarquia visual y sin la carga del stack anterior."
+            description="Combinamos profesionales de multiples areas STEAM: Ciencia, Tecnologia, Ingenieria, Arte y Matematicas."
           />
 
           <div className="team-grid team-grid--full">
@@ -90,8 +87,7 @@ export function AboutPage() {
         <div className="container">
           <SectionIntro
             eyebrow="Preguntas frecuentes"
-            title="Lo basico, sin esconderlo."
-            description="Una version breve y util de las preguntas que aparecian dispersas en el sitio anterior."
+            title="Preguntas frecuentes sobre microscopios, microscopía virtual y programas educativos."
           />
           <Accordion items={faqItems} />
         </div>

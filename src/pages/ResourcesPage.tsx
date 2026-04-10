@@ -7,17 +7,14 @@ import { resources } from "../data/siteData";
 export function ResourcesPage() {
   return (
     <>
-      <PageHero
-        title="Material Complementario"
-        description="Recursos de apoyo, enlaces externos y documentos descargables reunidos en una página simple y estable."
-      />
+      <PageHero title="Material Complementario" />
 
       <section className="section-shell" id="recursos">
         <div className="container">
           <SectionIntro
             eyebrow="Biblioteca base"
-            title="Lo importante aquí no es el contenedor, sino que el material esté claro y accesible."
-            description="Se mantienen los recursos visibles del sitio actual: manual, repositorio visual y PDF de evaluación."
+            title="Documentos, enlaces y material de apoyo."
+            description="Manual, repositorio visual y PDF de evaluacion."
           />
 
           <div className="resource-grid">

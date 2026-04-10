@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 type PageHeroProps = {
   title: string;
-  description: string;
+  description?: string;
 };
 
 export function PageHero({ title, description }: PageHeroProps) {
@@ -11,7 +11,9 @@ export function PageHero({ title, description }: PageHeroProps) {
       <div className="container page-hero__content" data-reveal>
         <p className="eyebrow">MicroMundo</p>
         <h1>{title}</h1>
-        <p className="section-copy page-hero__copy">{description}</p>
+        {description ? (
+          <p className="section-copy page-hero__copy">{description}</p>
+        ) : null}
         <div className="page-hero__breadcrumb">
           <Link to="/">Inicio</Link>
           <span>/</span>

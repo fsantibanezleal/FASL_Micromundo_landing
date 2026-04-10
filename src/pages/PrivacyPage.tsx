@@ -5,17 +5,14 @@ import { privacySections } from "../data/siteData";
 export function PrivacyPage() {
   return (
     <>
-      <PageHero
-        title="Políticas de Privacidad"
-        description="Versión legible de los temas legales principales presentes en el sitio original."
-      />
+      <PageHero title="Políticas de Privacidad" />
 
       <section className="section-shell" id="privacidad">
         <div className="container">
           <SectionIntro
             eyebrow="Resumen"
-            title="Una política clara vale más que una página pesada con scroll infinito."
-            description="Esta versión conserva los títulos y la intención de la página original, pero presentada en bloques más fáciles de recorrer."
+            title="Privacidad y uso del sitio."
+            description="Resumen de los puntos principales sobre privacidad, uso y tratamiento de datos."
           />
 
           <div className="privacy-grid">
