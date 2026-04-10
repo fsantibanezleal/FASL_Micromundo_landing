@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useEffectEvent, useState } from "react";
 import type { CSSProperties, ComponentType, SVGProps } from "react";
 import {
   ArrowRight,
@@ -99,7 +99,19 @@ const circuitServices = [
   },
 ];
 
-const featuredCourses = courses.slice(0, 6);
+function getCourseSlidesPerView(width: number) {
+  if (width <= 480) {
+    return 1;
+  }
+
+  if (width <= 800) {
+    return 2;
+  }
+
+  return 3;
+}
+
+const featuredCourses = courses;
 const marqueeLogos = [...collaboratorLogos, ...collaboratorLogos];
 
 export function HomePage() {
@@ -107,9 +119,63 @@ export function HomePage() {
     "technical",
   );
   const [activeCircuitIndex, setActiveCircuitIndex] = useState(0);
+  const [courseSlidesPerView, setCourseSlidesPerView] = useState(3);
+  const [activeCoursePage, setActiveCoursePage] = useState(0);
+  const [isCourseCarouselPaused, setIsCourseCarouselPaused] = useState(false);
 
   const infoList = activeInfoTab === "benefits" ? benefitList : technicalList;
   const activeCircuitService = circuitServices[activeCircuitIndex];
+  const coursePageCount = Math.ceil(
+    featuredCourses.length / courseSlidesPerView,
+  );
+  const currentCoursePage = Math.min(
+    activeCoursePage,
+    Math.max(coursePageCount - 1, 0),
+  );
+  const courseTrackTranslate =
+    featuredCourses.length > 0
+      ? (currentCoursePage * courseSlidesPerView * 100) / featuredCourses.length
+      : 0;
+  const courseCarouselStyle = {
+    "--course-slides-per-view": `${courseSlidesPerView}`,
+  } as CSSProperties;
+  const courseTrackStyle = {
+    transform: `translateX(-${courseTrackTranslate}%)`,
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setCourseSlidesPerView(getCourseSlidesPerView(window.innerWidth));
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize, { passive: true });
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const advanceCoursePage = useEffectEvent(() => {
+    setActiveCoursePage(
+      (currentPage) =>
+        Math.min(currentPage + 1, Math.max(coursePageCount - 1, 0)),
+    );
+  });
+
+  useEffect(() => {
+    if (
+      coursePageCount <= 1 ||
+      isCourseCarouselPaused ||
+      currentCoursePage >= coursePageCount - 1
+    ) {
+      return;
+    }
+
+    const intervalId = window.setInterval(() => {
+      advanceCoursePage();
+    }, 3000);
+
+    return () => window.clearInterval(intervalId);
+  }, [coursePageCount, currentCoursePage, isCourseCarouselPaused]);
 
   return (
     <>
@@ -297,7 +363,7 @@ export function HomePage() {
 
           <div className="home-gallery-wall__video" data-reveal>
             <iframe
-              src="https://www.youtube.com/embed/0L6EGejEI0w?si=Q3m5qQ6z7H0Qk4Y7"
+              src="https://www.youtube.com/embed/0L6EGejEI0w?feature=oembed"
               title="Puerto de Ideas I"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               referrerPolicy="strict-origin-when-cross-origin"
@@ -305,24 +371,79 @@ export function HomePage() {
             />
           </div>
 
-          <div className="home-portfolio-grid">
-            {featuredCourses.map((course, index) => (
-              <article
-                key={course.slug}
-                className="home-portfolio-card"
-                data-reveal
-                style={{ transitionDelay: `${index * 70}ms` }}
-              >
-                <Link to="/courses#catalogo" className="home-portfolio-card__image">
-                  <img src={course.image} alt={course.title} />
-                  <span className="home-portfolio-card__overlay" aria-hidden="true" />
-                </Link>
-                <div className="home-portfolio-card__body">
-                  <h3>{course.title}</h3>
-                  <p>{course.tags[0]}</p>
-                </div>
-              </article>
-            ))}
+        </div>
+      </section>
+
+      <section className="home-course-showcase">
+        <div className="container">
+          <div className="home-course-showcase__copy" data-reveal>
+            <div className="home-section-title">
+              <span className="home-section-title__divider" aria-hidden="true" />
+              <h2>Divi\u00e9rtete investigando en alguno de nuestros cursos</h2>
+            </div>
+
+            <p className="section-copy home-course-showcase__description">
+              Cursos para fines de semana, visitas a colegios, cursos
+              semestrales para colegios, escuelas de invierno y verano.
+              Co-dise\u00f1amos en conjunto con el colegio la mejor experiencia
+              cient\u00edfica.{" "}
+              <Link to="/courses">ver mas detalles</Link>
+            </p>
+          </div>
+
+          <div
+            className="home-course-carousel"
+            style={courseCarouselStyle}
+            data-reveal
+            onMouseEnter={() => setIsCourseCarouselPaused(true)}
+            onMouseLeave={() => setIsCourseCarouselPaused(false)}
+          >
+            <div className="home-course-carousel__viewport">
+              <div className="home-course-carousel__track" style={courseTrackStyle}>
+                {featuredCourses.map((course, index) => (
+                  <article
+                    key={course.slug}
+                    className="home-course-slide"
+                    style={{ transitionDelay: `${index * 60}ms` }}
+                  >
+                    <div className="home-course-card">
+                      <Link
+                        to="/courses"
+                        className="home-course-card__image"
+                      >
+                        <img src={course.image} alt={course.title} />
+                        <span
+                          className="home-course-card__overlay"
+                          aria-hidden="true"
+                        />
+                      </Link>
+                      <div className="home-course-card__body">
+                        <h3>
+                          <Link to="/courses">{course.title}</Link>
+                        </h3>
+                        <p className="home-course-card__meta">
+                          {course.tags.join(" | ")}
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+
+            <div className="home-course-carousel__dots" aria-label="Paginacion de cursos">
+              {Array.from({ length: coursePageCount }, (_, index) => (
+                <button
+                  key={index}
+                  type="button"
+                  className={`home-course-carousel__dot ${
+                    index === currentCoursePage ? "is-active" : ""
+                  }`}
+                  onClick={() => setActiveCoursePage(index)}
+                  aria-label={`Ir al grupo ${index + 1} de cursos`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>

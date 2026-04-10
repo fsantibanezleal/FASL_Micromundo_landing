@@ -376,7 +376,7 @@ export const courses: Course[] = [
   },
   {
     slug: "neuro-optica-geologia-microbiologia",
-    title: "Neurociencia, Óptica, Geología y Microbiología",
+    title: "Neurociencia, Óptica, Geología, y Microbiología",
     description:
       "Programa semestral interdisciplinario para profundizar en observación, evidencia y fenómenos naturales.",
     image: "/media/courses/neuro-optica-geologia.jpg",
@@ -396,7 +396,7 @@ export const courses: Course[] = [
   },
   {
     slug: "ferias-en-colegios",
-    title: "Ferias en Colegios",
+    title: "Ferias en colegios",
     description:
       "Activaciones abiertas para comunidades escolares con estaciones científicas, demostraciones y mediación.",
     image: "/media/courses/ferias.jpg",
@@ -416,7 +416,7 @@ export const courses: Course[] = [
   },
   {
     slug: "construyendo-microscopios",
-    title: "Construyendo Microscopios",
+    title: "Construyendo microscopios",
     description:
       "Visita a colegio para aprender óptica básica armando dispositivos y entendiendo cómo se forma una imagen.",
     image: "/media/courses/construyendo-microscopios.jpg",
@@ -433,6 +433,26 @@ export const courses: Course[] = [
     tags: ["Pre-Básica"],
     format: "Curso individual",
     audience: "Pre-Básica",
+  },
+  {
+    slug: "laboratorio-movil",
+    title: "Laboratorio móvil",
+    description:
+      "Experiencia itinerante con estaciones de observaci\u00f3n, muestras y actividades guiadas para cursos de educaci\u00f3n media.",
+    image: "/media/courses/laboratorio-movil.jpg",
+    tags: ["Educaci\u00f3n Media"],
+    format: "Curso semestral",
+    audience: "Educaci\u00f3n Media",
+  },
+  {
+    slug: "laboratorio-morfologia-sexualidad-genero",
+    title: "Laboratorio de Morfología, Sexualidad, y Género",
+    description:
+      "Visita escolar que cruza morfolog\u00eda, sexualidad y conversaci\u00f3n guiada mediante materiales visuales y actividades mediadas.",
+    image: "/media/courses/laboratorio-morfologia.jpg",
+    tags: ["Visita Colegio"],
+    format: "Visita a colegio",
+    audience: "P\u00fablico General",
   },
 ];
 
