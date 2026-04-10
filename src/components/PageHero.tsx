@@ -20,6 +20,7 @@ export function PageHero({ title, description }: PageHeroProps) {
       </div>
       <div className="page-hero__shape page-hero__shape--one" />
       <div className="page-hero__shape page-hero__shape--two" />
+      <div className="section-mountain section-mountain--page" aria-hidden="true" />
     </section>
   );
 }

@@ -121,6 +121,8 @@ export function HomePage() {
             ))}
           </div>
         </div>
+
+        <div className="section-mountain section-mountain--landing" aria-hidden="true" />
       </section>
 
       <section className="section-shell section-shell--plain" id="metodologia">
@@ -191,6 +193,8 @@ export function HomePage() {
             </Link>
           </div>
         </div>
+
+        <div className="section-mountain section-mountain--home3" aria-hidden="true" />
       </section>
 
       <section className="section-shell section-shell--tint" id="programas">
