@@ -9,6 +9,15 @@ import {
   teamMembers,
 } from "../data/siteData";
 
+function renderCounterValue(value: string) {
+  return (
+    <strong className="counter-card__value">
+      <span className="counter-card__number">{value.replace("+", "")}</span>
+      {value.includes("+") ? <sup className="counter-card__plus">+</sup> : null}
+    </strong>
+  );
+}
+
 export function AboutPage() {
   return (
     <>
@@ -54,8 +63,8 @@ export function AboutPage() {
                 data-reveal
                 style={{ transitionDelay: `${index * 90}ms` }}
               >
-                <strong>{item.value}</strong>
-                <span>{item.label}</span>
+                {renderCounterValue(item.value)}
+                <span className="counter-card__label">{item.label}</span>
               </article>
             ))}
           </div>
