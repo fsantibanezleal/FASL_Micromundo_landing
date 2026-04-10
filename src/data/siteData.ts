@@ -23,6 +23,33 @@ export type HighlightCard = {
   description: string;
 };
 
+export type HomeServiceStep = {
+  step: string;
+  title: string;
+  description: string;
+};
+
+export type HomeStat = {
+  value: string;
+  label: string;
+};
+
+export type HomeGalleryImage = {
+  src: string;
+  alt: string;
+};
+
+export type CollaboratorLogo = {
+  label: string;
+  colorSrc: string;
+  monoSrc: string;
+};
+
+export type AboutStat = {
+  value: string;
+  label: string;
+};
+
 export type Course = {
   slug: string;
   title: string;
@@ -120,6 +147,93 @@ export const utilityCta = {
   href: "https://micromundo.app/classroom",
 };
 
+export const homeServiceSteps: HomeServiceStep[] = [
+  {
+    step: "01",
+    title: "Phenomenon Learning",
+    description:
+      "Experiencias que cruzan observación, preguntas reales y contenidos curriculares en una misma secuencia.",
+  },
+  {
+    step: "02",
+    title: "Experimentos",
+    description:
+      "Activaciones prácticas con microscopía, anatomía experimental, óptica y fenómenos visibles en sala.",
+  },
+  {
+    step: "03",
+    title: "E-Learning",
+    description:
+      "Biblioteca digital, recursos descargables y acompañamiento remoto sin depender de WordPress o plugins.",
+  },
+  {
+    step: "04",
+    title: "Proyectos",
+    description:
+      "Programas diseñados junto a colegios e instituciones para sostener una experiencia más larga y coherente.",
+  },
+];
+
+export const homeStats: HomeStat[] = [
+  { value: "27+", label: "Colaboradores científicos" },
+  { value: "9+", label: "Instituciones colaboradoras" },
+];
+
+export const homeGallery: HomeGalleryImage[] = [
+  {
+    src: "/media/gallery/WhatsApp-Image-2018-12-02-at-22.17.16-1.jpeg",
+    alt: "Actividad de MicroMundo en terreno",
+  },
+  {
+    src: "/media/gallery/image004.jpg",
+    alt: "Grupo trabajando con materiales de observación",
+  },
+  {
+    src: "/media/gallery/image006.jpg",
+    alt: "Estudiantes explorando contenidos científicos",
+  },
+  {
+    src: "/media/gallery/image007.jpg",
+    alt: "Sesión de experimentación guiada",
+  },
+  {
+    src: "/media/gallery/image008.jpg",
+    alt: "Trabajo colaborativo en actividades del programa",
+  },
+  {
+    src: "/media/gallery/WhatsApp-Image-2018-12-02-at-22.17.16-2.jpeg",
+    alt: "Instancia práctica en aula o taller",
+  },
+];
+
+export const collaboratorLogos: CollaboratorLogo[] = [
+  {
+    label: "Explora",
+    colorSrc: "/media/collaborators/RGB_Explora.png",
+    monoSrc: "/media/collaborators/ByW_Explora.png",
+  },
+  {
+    label: "ImagineLab",
+    colorSrc: "/media/collaborators/RGB_IMAGINELAB.png",
+    monoSrc: "/media/collaborators/ByW_IMAGINELAB.png",
+  },
+  {
+    label: "Planetario",
+    colorSrc: "/media/collaborators/RGB_Planetario.png",
+    monoSrc: "/media/collaborators/ByW_planetario.png",
+  },
+  {
+    label: "SUP",
+    colorSrc: "/media/collaborators/RGB_SUP.png",
+    monoSrc: "/media/collaborators/ByW_SUP-1.png",
+  },
+  {
+    label: "Universidad de Chile",
+    colorSrc: "/media/collaborators/ByW_UCHILE.png",
+    monoSrc: "/media/collaborators/ByW_UCHILE.png",
+  },
+];
+
 export const heroCards: HighlightCard[] = [
   {
     eyebrow: "Aprendizaje",
@@ -192,6 +306,13 @@ export const methodologyCards: HighlightCard[] = [
     description:
       "Ajustamos cada implementación junto al colegio según edad, tiempos, objetivos y contexto pedagógico.",
   },
+];
+
+export const aboutStats: AboutStat[] = [
+  { value: "3200+", label: "Estudiantes en cursos y talleres" },
+  { value: "4+", label: "Años de experiencia" },
+  { value: "5+", label: "Cursos regionales" },
+  { value: "12+", label: "Proyectos finalizados" },
 ];
 
 export const collaborators = [
@@ -442,8 +563,8 @@ export const contactInfo = {
   addressHref:
     "https://www.google.com/maps/search/?api=1&query=Independencia+1027+Independencia+Santiago+Facultad+de+Medicina+Universidad+de+Chile",
   email: "contacto@micromundo.team",
-  phoneDisplay: "+56 9 6622 3829",
-  phoneHref: "tel:+56966223829",
+  phoneDisplay: "+(56) 9 3406 6432",
+  phoneHref: "tel:+56934066432",
   site: "https://micromundo.team",
 };
 
