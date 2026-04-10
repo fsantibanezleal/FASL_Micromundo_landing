@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 import {
   contactInfo,
-  footerSocialLinks,
   footerLinks,
+  footerSocialLinks,
 } from "../data/siteData";
 import { SocialIcon } from "./SocialIcon";
 
@@ -135,7 +135,7 @@ export function Footer() {
             Terminos de uso | Politicas de privacidad
           </Link>
         </div>
-        <p>Copyright © 2023 MicroMundo. Todos los derechos reservados.</p>
+        <p>Copyright (c) 2026 MicroMundo. Todos los derechos reservados.</p>
       </div>
     </footer>
   );
