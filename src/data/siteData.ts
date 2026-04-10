@@ -14,7 +14,7 @@ export type NavItem = {
 
 export type SocialLink = {
   label: string;
-  href: string;
+  href?: string;
   icon: IconKind;
 };
 
@@ -62,6 +62,8 @@ export type Course = {
 };
 
 export type TeamMember = {
+  slug: string;
+  profileHref: string;
   name: string;
   role: string;
   focus: string;
@@ -469,90 +471,107 @@ export const courseFilters = [
 
 export const teamMembers: TeamMember[] = [
   {
+    slug: "wendy-sanchez",
+    profileHref: "/Equipo/wendy-sanchez",
     name: "Wendy Sanchez",
     role: "Comunicaciones",
     focus: "Vínculo con comunidades, difusión y articulación de proyectos.",
     image: "/media/team/wendy-sanchez.jpeg",
-    links: [
-      {
-        label: "Instagram",
-        href: "https://www.instagram.com/wnatatlia/",
-        icon: "instagram",
-      },
-      {
-        label: "WhatsApp",
-        href: "https://wa.me/56934066432",
-        icon: "whatsapp",
-      },
-    ],
   },
   {
+    slug: "natalia-leon",
+    profileHref: "/Equipo/natalia-leon",
     name: "Natalia León",
     role: "Enfermería",
     focus: "Experiencias ligadas a salud, formación y mediación clínica.",
     image: "/media/team/natalia-leon.jpg",
   },
   {
+    slug: "jtoledo",
+    profileHref: "/Equipo/jtoledo",
     name: "Jorge Toledo",
     role: "CEO",
     focus: "Dirección general, visión interdisciplinaria y desarrollo de programas.",
     image: "/media/team/jorge-toledo.jpg",
-    links: [
-      {
-        label: "Instagram",
-        href: "https://www.instagram.com/micromundoteam/",
-        icon: "instagram",
-      },
-      {
-        label: "LinkedIn",
-        href: "https://www.linkedin.com/in/jorge-toledo-3755073a/",
-        icon: "linkedin",
-      },
-    ],
   },
   {
+    slug: "paulina-maffud",
+    profileHref: "/Equipo/paulina-maffud",
     name: "Paulina Maffud",
     role: "Finanzas",
     focus: "Gestión financiera, sostenibilidad operativa y coordinación interna.",
     image: "/media/team/paulina-maffud.jpeg",
   },
   {
+    slug: "paulo-gonzalez",
+    profileHref: "/Equipo/paulo-gonzalez",
     name: "Paulo Gonzalez",
     role: "Editor y diseñador",
     focus: "Narrativa visual, diseño editorial y piezas gráficas para experiencias STEAM.",
     image: "/media/team/paulo-gonzalez.jpeg",
+    links: [
+      { label: "Twitter", icon: "twitter" },
+      { label: "Facebook", icon: "facebook" },
+      { label: "LinkedIn", icon: "linkedin" },
+    ],
   },
   {
+    slug: "claudia-reyes",
+    profileHref: "/Equipo/claudia-reyes",
     name: "Claudia Reyes",
     role: "Microscopía Virtual",
     focus: "Curaduría y aplicación pedagógica del ecosistema de microscopía digital.",
     image: "/media/team/claudia-reyes.jpeg",
   },
   {
+    slug: "isidora-maffud",
+    profileHref: "/Equipo/isidora-maffud",
     name: "Isidora Maffud",
     role: "Informática",
     focus: "Procesos digitales, soporte técnico y continuidad del entorno virtual.",
     image: "/media/team/isidora-maffud.jpg",
+    links: [
+      { label: "Twitter", icon: "twitter" },
+      { label: "Facebook", icon: "facebook" },
+      { label: "LinkedIn", icon: "linkedin" },
+    ],
   },
   {
+    slug: "renato-moraga",
+    profileHref: "/Equipo/renato-moraga",
     name: "Renato Moraga",
     role: "Histología",
     focus: "Contenidos de morfología y construcción de experiencias con muestras y tejido.",
     image: "/media/team/renato-moraga.jpeg",
   },
   {
+    slug: "catalina-munoz",
+    profileHref: "/Equipo/catalina-munoz",
     name: "Catalina Muñoz",
     role: "Histología",
     focus: "Acompañamiento en contenidos microscópicos y experiencias de aula.",
     image: "/media/team/catalina-munoz.jpg",
   },
   {
+    slug: "patricio-toro",
+    profileHref: "/Equipo/patricio-toro",
     name: "Patricio Toro",
     role: "Managing Director",
     focus: "Gestión estratégica, alianzas y despliegue operacional de programas.",
     image: "/media/team/patricio-toro.jpg",
+    links: [
+      { label: "Twitter", icon: "twitter" },
+      { label: "Facebook", icon: "facebook" },
+      { label: "LinkedIn", icon: "linkedin" },
+    ],
   },
 ];
+
+export function getTeamMemberBySlug(slug: string) {
+  return teamMembers.find(
+    (member) => member.slug.toLowerCase() === slug.toLowerCase(),
+  );
+}
 
 export const disciplineGroups: DisciplineGroup[] = [
   {
@@ -740,7 +759,7 @@ export const searchEntries: SearchEntry[] = [
   ...teamMembers.map<SearchEntry>((member) => ({
     title: member.name,
     description: `${member.role}. ${member.focus}`,
-    href: "/about-us#team",
-    keywords: [member.role, member.focus],
+    href: member.profileHref,
+    keywords: [member.role, member.focus, member.slug],
   })),
 ];
