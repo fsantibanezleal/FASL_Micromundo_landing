@@ -59,10 +59,6 @@ export function Header({ onSearchOpen }: HeaderProps) {
         isScrolled ? "site-header--scrolled" : "site-header--rest",
       ].join(" ")}
     >
-      {isHome ? (
-        <div className="site-header__mountain" aria-hidden="true" />
-      ) : null}
-
       <div className="site-header__top">
         <div className="container site-header__top-inner">
           <div className="header-meta">
