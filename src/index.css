@@ -1279,23 +1279,8 @@ body {
 }
 
 .site-header--home.site-header--rest .site-header__top {
-  background: rgba(4, 12, 94, 0.72);
-  border-bottom-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(14px);
-  color: #ffffff;
-}
-
-.site-header--home.site-header--rest .site-header__top .header-meta__item,
-.site-header--home.site-header--rest .site-header__top .utility-bar__cta {
-  color: #f4f6fd;
-}
-
-.site-header--home.site-header--rest .site-header__top .header-meta__item svg {
-  color: #ffffff;
-}
-
-.site-header--home.site-header--rest .site-header__top .header-meta__divider {
-  background: rgba(255, 255, 255, 0.24);
+  background: transparent;
+  border-bottom-color: transparent;
 }
 
 .site-header--scrolled .site-header__top {
@@ -1371,40 +1356,9 @@ body {
 }
 
 .site-header--home.site-header--rest .site-header__main {
-  background: rgba(4, 12, 94, 0.68);
+  background: transparent;
   border-bottom-color: transparent;
-  backdrop-filter: blur(18px);
-  color: #ffffff;
-}
-
-.site-header--home.site-header--rest .site-header__main .site-nav__link,
-.site-header--home.site-header--rest .site-header__main .search-trigger {
-  color: #f4f6fd;
-}
-
-.site-header--home.site-header--rest .site-header__main .site-nav__link:hover,
-.site-header--home.site-header--rest .site-header__main .site-nav__link--active {
-  color: #ffffff;
-}
-
-/* Mountain overlay at the bottom of the home header — mirrors the footer mountain */
-.site-header__mountain {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -6.4rem;
-  height: 6.8rem;
-  background-image: url("/media/decor/mountain-header-blue.svg");
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: 100% 100%;
-  pointer-events: none;
-  z-index: 0;
-  transition: opacity 0.3s ease;
-}
-
-.site-header--scrolled .site-header__mountain {
-  opacity: 0;
+  box-shadow: none;
 }
 
 .site-header--inner.site-header--rest .site-header__main {
@@ -1747,7 +1701,7 @@ body {
 
 .section-mountain--landing {
   height: clamp(4.5rem, 10vw, 8rem);
-  background-image: url("/media/decor/mountain-header-landing.svg");
+  background-image: url("/media/decor/mountain-header-landing-blue.svg");
   z-index: 2;
 }
 
