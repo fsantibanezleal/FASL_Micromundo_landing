@@ -3738,3 +3738,252 @@ body {
     padding-bottom: 1.8rem;
   }
 }
+
+/* About page: team directory closer to original Seofy module */
+.about-team-shell {
+  padding-top: 1rem;
+  padding-bottom: 5rem;
+}
+
+.team-grid--directory {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2rem 1.5rem;
+}
+
+.team-card {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.team-card__media {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #eef3f8;
+}
+
+.team-card__image-link {
+  display: block;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.team-card__image {
+  aspect-ratio: 1 / 1.2;
+  transform: scale(1.08);
+  transition: transform 1s ease-out;
+}
+
+.team-card__body {
+  display: grid;
+  gap: 0;
+  padding: 0 30px 15px;
+}
+
+.team-card__socials {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  margin-top: -17px;
+  margin-bottom: 1.15rem;
+}
+
+.social-button--team {
+  width: 34px;
+  height: 34px;
+  background: linear-gradient(120deg, #ff8f20, #ff5c12);
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(255, 125, 0, 0.22);
+}
+
+.social-button--team:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(50, 36, 233, 0.16);
+}
+
+.social-button--team-static {
+  cursor: default;
+}
+
+.team-card__titles {
+  margin-top: 0.15rem;
+}
+
+.team-card__role {
+  color: #909090;
+  font-size: 0.96rem;
+  line-height: 1.5;
+}
+
+.team-card__title {
+  margin: 0.2rem 0 0;
+  color: #252525;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.team-card__title a {
+  color: inherit;
+}
+
+.team-card__excerpt {
+  max-height: 0;
+  margin-top: 0;
+  overflow: hidden;
+  color: #6e6e6e;
+  font-size: 14px;
+  line-height: 1.71;
+  opacity: 0;
+  transition:
+    max-height 0.35s ease,
+    margin-top 0.35s ease,
+    opacity 0.35s ease;
+}
+
+.team-card__profile-link {
+  margin-top: 0.6rem;
+  color: #3224e9;
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.team-card:hover .team-card__image,
+.team-card:focus-within .team-card__image {
+  transform: scale(1);
+}
+
+.team-card:hover .team-card__excerpt,
+.team-card:focus-within .team-card__excerpt {
+  max-height: 8.5rem;
+  margin-top: 0.75rem;
+  opacity: 1;
+}
+
+.about-overview-shell {
+  padding-top: 5.5rem;
+}
+
+.about-overview-shell .section-intro {
+  max-width: 56rem;
+  margin-inline: auto;
+}
+
+.discipline-grid--about {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.discipline-card--about {
+  position: relative;
+  min-height: 100%;
+  border: 1px solid rgba(45, 110, 166, 0.08);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 22px 48px rgba(35, 54, 72, 0.08);
+}
+
+.discipline-card--about h3 {
+  color: #203548;
+}
+
+.counter-grid--wide {
+  margin-top: 2.75rem;
+}
+
+.team-profile {
+  padding-top: 4.5rem;
+}
+
+.team-profile__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr);
+  gap: 2.25rem;
+  align-items: start;
+}
+
+.team-profile__media {
+  position: relative;
+}
+
+.team-profile__image {
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 24px 60px rgba(35, 54, 72, 0.14);
+}
+
+.team-profile__socials {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 1.1rem;
+}
+
+.team-profile__title {
+  margin: 0;
+  color: #252525;
+  font-size: clamp(2.3rem, 5vw, 3.2rem);
+  line-height: 1.03;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+
+.team-profile__role {
+  margin: 0.85rem 0 1.2rem;
+  color: #909090;
+  font-size: 1.08rem;
+  font-weight: 800;
+}
+
+.team-profile__copy {
+  margin: 0;
+  color: #5f7286;
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+.team-profile__actions {
+  margin-top: 2rem;
+}
+
+@media (max-width: 1180px) {
+  .team-grid--directory,
+  .discipline-grid--about,
+  .team-profile__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .team-profile__grid {
+    gap: 1.75rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .about-team-shell {
+    padding-top: 0;
+  }
+
+  .team-grid--directory,
+  .discipline-grid--about,
+  .team-profile__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-card__body {
+    padding: 0 20px 15px;
+  }
+
+  .team-card__excerpt {
+    max-height: 8.5rem;
+    margin-top: 0.75rem;
+    opacity: 1;
+  }
+}

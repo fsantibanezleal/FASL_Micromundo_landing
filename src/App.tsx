@@ -12,6 +12,7 @@ import { HomePage } from "./pages/HomePage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { PrivacyPage } from "./pages/PrivacyPage";
 import { ResourcesPage } from "./pages/ResourcesPage";
+import { TeamProfilePage } from "./pages/TeamProfilePage";
 
 const pageTitles: Record<string, string> = {
   "/": "MicroMundo | Landing",
@@ -93,6 +94,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about-us" element={<AboutPage />} />
+          <Route path="/Equipo/:slug" element={<TeamProfilePage />} />
           <Route path="/courses" element={<CoursesPage />} />
           <Route path="/contact-us" element={<ContactPage />} />
           <Route path="/material-complementario" element={<ResourcesPage />} />
