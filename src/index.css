@@ -1280,7 +1280,21 @@ body {
 
 .site-header--home.site-header--rest .site-header__top {
   background: transparent;
-  border-bottom-color: transparent;
+  border-bottom-color: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+
+.site-header--home.site-header--rest .site-header__top .header-meta__item,
+.site-header--home.site-header--rest .site-header__top .utility-bar__cta {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.site-header--home.site-header--rest .site-header__top .header-meta__item svg {
+  color: #ffffff;
+}
+
+.site-header--home.site-header--rest .site-header__top .header-meta__divider {
+  background: rgba(255, 255, 255, 0.26);
 }
 
 .site-header--scrolled .site-header__top {
@@ -1359,6 +1373,17 @@ body {
   background: transparent;
   border-bottom-color: transparent;
   box-shadow: none;
+  color: #ffffff;
+}
+
+.site-header--home.site-header--rest .site-header__main .site-nav__link,
+.site-header--home.site-header--rest .site-header__main .search-trigger {
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.site-header--home.site-header--rest .site-header__main .site-nav__link:hover,
+.site-header--home.site-header--rest .site-header__main .site-nav__link--active {
+  color: #ffffff;
 }
 
 .site-header--inner.site-header--rest .site-header__main {
@@ -1523,9 +1548,9 @@ body {
   position: relative;
   padding: 5rem 0 7.5rem;
   overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(242, 248, 252, 0.96), rgba(255, 255, 255, 0.92)),
-    radial-gradient(circle at 78% 18%, rgba(244, 138, 31, 0.1), transparent 24%);
+  color: #ffffff;
+  /* Matches the original Seofy/Micromundo WP hero: #3224e9 (deep indigo) bottom → #5ad0ff (bright cyan) top */
+  background: linear-gradient(0deg, #3224e9 0%, #5ad0ff 100%);
 }
 
 .hero--micromundo::before {
@@ -1533,8 +1558,8 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 6% 0%, rgba(95, 163, 215, 0.18), transparent 28%),
-    radial-gradient(circle at 100% 12%, rgba(244, 138, 31, 0.16), transparent 24%);
+    radial-gradient(circle at 8% 6%, rgba(255, 255, 255, 0.18), transparent 34%),
+    radial-gradient(circle at 94% 92%, rgba(4, 12, 94, 0.28), transparent 38%);
   pointer-events: none;
 }
 
@@ -1542,8 +1567,8 @@ body {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(120deg, rgba(255, 255, 255, 0.2), transparent 44%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.24), transparent 72%);
+    linear-gradient(180deg, rgba(4, 12, 94, 0.18), transparent 45%),
+    linear-gradient(0deg, rgba(4, 12, 94, 0.22), transparent 58%);
   pointer-events: none;
 }
 
@@ -1557,9 +1582,18 @@ body {
 
 .hero--micromundo h1 {
   max-width: 11ch;
-  color: #203548;
+  color: #ffffff;
   font-size: clamp(3rem, 5.8vw, 5.2rem);
   line-height: 0.98;
+  text-shadow: 0 2px 16px rgba(4, 12, 94, 0.22);
+}
+
+.hero--micromundo .hero__eyebrow {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero--micromundo .hero__description {
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .hero__description {
