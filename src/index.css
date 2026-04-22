@@ -533,7 +533,10 @@ img {
   top: 7%;
   right: 3%;
   width: min(88%, 28rem);
-  opacity: 0.82;
+  /* The PNG is white/near-gray hexagons — at 0.82 opacity over the blue
+     hero they read as floating gray shapes. Hide on the home hero entirely;
+     the blue is clean without decorative hexagons. */
+  display: none;
 }
 
 .hero__floating--one {
@@ -1549,27 +1552,19 @@ body {
   padding: 5rem 0 7.5rem;
   overflow: hidden;
   color: #ffffff;
-  /* Matches the original Seofy/Micromundo WP hero: #3224e9 (deep indigo) bottom → #5ad0ff (bright cyan) top */
-  background: linear-gradient(0deg, #3224e9 0%, #5ad0ff 100%);
+  /* Solid #3224e9 — matches the blue accent band on the polygon. No gradient. */
+  background: #3224e9;
 }
 
 .hero--micromundo::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 8% 6%, rgba(255, 255, 255, 0.18), transparent 34%),
-    radial-gradient(circle at 94% 92%, rgba(4, 12, 94, 0.28), transparent 38%);
-  pointer-events: none;
+  /* Overlays removed — previous navy rgba(4,12,94,0.28) on top of the cyan
+     part of the gradient was creating a gray blend. Hero is clean gradient now. */
+  content: none;
 }
 
 .hero__wash {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, rgba(4, 12, 94, 0.18), transparent 45%),
-    linear-gradient(0deg, rgba(4, 12, 94, 0.22), transparent 58%);
-  pointer-events: none;
+  /* Same — the navy semi-transparent washes were graying out the blue. */
+  display: none;
 }
 
 .hero__grid {
