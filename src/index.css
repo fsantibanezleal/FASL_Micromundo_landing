@@ -1552,8 +1552,10 @@ body {
   padding: 5rem 0 7.5rem;
   overflow: hidden;
   color: #ffffff;
-  /* Solid #3224e9 — matches the blue accent band on the polygon. No gradient. */
-  background: #3224e9;
+  /* Solid navy #040c5e — matches the WP seofy theme's hero + the footer
+     mountain fill. The ENTIRE hero block is this color; the polygon at the
+     bottom is WHITE and is the transition into the white content section. */
+  background: #040c5e !important;
 }
 
 .hero--micromundo::before {
@@ -2683,14 +2685,17 @@ body {
 .hero--seofy {
   padding-top: 12.5rem;
   padding-bottom: 6.75rem;
-  background:
-    linear-gradient(180deg, rgba(18, 33, 53, 0.72) 0%, rgba(235, 243, 248, 0.94) 22%, rgba(255, 255, 255, 0.96) 100%),
-    radial-gradient(circle at 78% 18%, rgba(244, 138, 31, 0.1), transparent 24%);
+  /* Previously: gradient from navy to white (the gray wash Felipe kept
+     seeing). Replaced with the solid #040c5e navy that matches the
+     WP seofy theme's hero AND the footer fill. */
+  background: #040c5e;
 }
 
 .hero--seofy h1 {
   max-width: 11ch;
-  color: #203548;
+  /* Previously #203548 (dark navy text) — unreadable on the new navy bg.
+     White text matches the WP reference. */
+  color: #ffffff;
 }
 
 .hero__eyebrow,
