@@ -1735,7 +1735,7 @@ body {
 
 .section-mountain--landing {
   height: clamp(4.5rem, 10vw, 8rem);
-  background-image: url("/media/decor/mountain-header-landing.svg");
+  background-image: url("/media/decor/mountain-header-landing-blue.svg");
   z-index: 2;
 }
 
