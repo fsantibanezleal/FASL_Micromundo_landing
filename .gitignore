@@ -21,3 +21,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Python virtualenvs (any name, any depth) — never commit venvs
+.venv/
+.venv*
+**/.venv*
+venv/
+**/venv/
