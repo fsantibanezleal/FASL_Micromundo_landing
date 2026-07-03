@@ -1,5 +1,7 @@
 # FASL MicroMundo Landing
 
+[![License](https://img.shields.io/github/license/fsantibanezleal/FASL_Micromundo_landing)](LICENSE)
+
 Reimplementacion del frontend de `micromundo.team` como sitio estatico en `React + TypeScript + Vite`, sin dependencia de WordPress, plugins ni panel de administracion.
 
 ## Objetivo
