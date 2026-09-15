@@ -2152,6 +2152,10 @@ body {
   position: absolute;
   inset: 0;
   pointer-events: none;
+  /* Decorative images bleed past the section edge on purpose (right: -4%).
+     Clip them to the section so they never widen the document; without this
+     the home page scrolled horizontally (1498px document at a 1440px viewport). */
+  overflow: hidden;
 }
 
 .section-shell__decor {
@@ -2831,6 +2835,11 @@ body {
 
 .home-microscopy {
   padding-top: 2rem;
+  /* The layered images enter with slide_left / slide_right (translateX 4.5rem)
+     until the section is revealed; unclipped, that offset widened the page on
+     phones before the user scrolled here. clip (not hidden) creates no scroll
+     container and does not clip vertically. */
+  overflow-x: clip;
 }
 
 .home-microscopy__grid,
